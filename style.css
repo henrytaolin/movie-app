@@ -5,15 +5,36 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
+/* body {
     height: 100vh;
     background: linear-gradient(#000000 50%, #ffb92a 50%);
+} */
+
+/* Gradient Animasi */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #FCB92E, #FCB92E, gray, black);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
     font-size: 16px;
     width: 90vw;
     max-width: 37.5em;
+    /* max-height: 37.5em; */
     padding: 3em 1.8em;
     background-color: #201f28;
     position: absolute;
@@ -24,18 +45,75 @@ body {
     box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
 }
 
+
 .search-container {
     display: grid;
     grid-template-columns: 9fr 3fr;
     gap: 1.2em;
 }
 
-.search-container input,
+/* .search-container input,
 .search-container button {
     font-size: 0.9em;
     outline: none;
     border-radius: 0.3em;
+} */
+
+
+.search-container {
+    position: relative;
 }
+
+.search-container input {
+    font-size: 1em;
+    padding: 0.8em 1em;
+    outline: none;
+    border: none;
+    border-radius: 0.3em;
+    background-color: #ffffff;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.search-container input:focus {
+    box-shadow: 0 0 1em rgba(0, 0, 255, 0.3);
+}
+
+.search-container button {
+    font-size: 1em;
+    padding: 0.8em 1.5em;
+    margin-left: -3px;
+    outline: none;
+    border: none;
+    border-radius: 0 0.3em 0.3em 0;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: green;
+}
+
+/* Entertain Animation */
+.search-container input:focus, .search-container button:hover {
+    animation: bounceAnimation 0.5s ease;
+}
+
+@keyframes bounceAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25%, 75% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+}
+
+
 
 .search-container input {
     background-color: transparent;

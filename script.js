@@ -49,7 +49,7 @@ let getMovie = () => {
                             </div>
                         </div>
                     </div>
-                    <h3>Plot :</h3>
+                    <h3>Synopsis :</h3>
                     <p>${data.Plot}</p>
                     <h3>Cast :</h3>
                     <p>${data.Actors}</p>
